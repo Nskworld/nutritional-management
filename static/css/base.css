@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    min-height: 100%; /* 最小高さをブラウザの表示領域全体の高さにする */
+    margin: 0; /* デフォルトのマージンをリセット */
+}
+
+body {
+    flex: 1 0 auto; /* main要素がコンテンツに合わせて伸縮 */
+    overflow: auto; /* コンテンツがmain要素のサイズを超えたらスクロール */
+    display: flex; /* Flexboxを有効にする */
+    flex-direction: column; /* 子要素を縦に並べる */
+}
+
+header {
+    /* 表示設定 */
+    background-color: black;
+    height: 80px;
+    width: 100%;
+
+    /* 位置設定 */
+    position: fixed; /* ヘッダーを固定 */
+    top: 0; /* ヘッダーをビューポートの最上部に配置 */
+    z-index: 10; /* ヘッダーが他の要素より上に表示されるように */
+}
+
+main {
+    flex: 1 0; /* main要素に可変の領域を割り当てる */
+    display: flex;
+    flex-direction: column;
+
+    /* 位置設定 */
+    margin-top: 80px; /* ヘッダーの下に内容を表示する */
+}
+
+#side-menu {
+    /* 表示設定 */
+    background-color: black;
+    opacity: 0.8;
+    height: 836px;
+    width: 40%;
+
+    /* 位置設定 */
+    position: fixed;
+    top: 80px;
+    left: -40%; /* 初期状態で非表示 */
+    z-index: 1000;
+    
+    /* 動きの設定 */
+    transition: left 0.3s;
+}
+
+#hamburger-icon {
+    /* 表示設定 */
+    /* background-color: aqua; */
+    cursor: pointer;
+    height: 80px;
+    width: 50px;
+
+    /* 位置設定 */
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.fa-bars {
+    font-size: 25px; 
+    color: white;
+}
+
+#content {
+    /* 位置設定 */
+    position: relative; /* side-menuとの位置関係を明確にする */
+    z-index: 1; /* 必要に応じて調整 */
+}
+
+footer {
+    /* 表示設定 */
+    background-color: black;
+    height: 10px;
+    width: 100%;
+
+    /* 位置設定 */
+    margin-top: auto; /* フッターを下部に固定 */
+}
