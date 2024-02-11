@@ -10,7 +10,7 @@ class Food(models.Model):
         calorie: カロリー(kcal)
         protein: たんぱく質(g)
         fat: 脂質(g)
-        carbohydrates: 炭水化物(g)
+        carbohydrate: 炭水化物(g)
         delete_flg: 削除済みフラグ
         created_datetime: 作成日
         updated_datetime: 更新日
@@ -22,7 +22,7 @@ class Food(models.Model):
     calorie = models.FloatField(blank=True, null=True)
     protein = models.FloatField(blank=True, null=True)
     fat = models.FloatField(blank=True, null=True)
-    carbohydrates = models.FloatField(blank=True, null=True)
+    carbohydrate = models.FloatField(blank=True, null=True)
     delete_flg = models.BooleanField(default=False)
     created_datetime = models.DateTimeField(auto_now_add=True)
     updated_datetime = models.DateTimeField(auto_now=True)
