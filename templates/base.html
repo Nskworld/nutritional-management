@@ -8,13 +8,15 @@
     <script src="https://kit.fontawesome.com/c263ef70a0.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     {% block statics %}{% endblock %}
-    <title>{% block title %}My Site{% endblock %}</title>
 </head>
 <body>
     <header>
         <div id="hamburger-icon" onclick="toggleSideMenu()">
             <i class="fa-solid fa-bars"></i>
-        </div>     
+        </div>
+        <div class="title">
+            <h1>{% block title %}{% endblock %}</h1>
+        </div>
     </header>
     
     <main>
