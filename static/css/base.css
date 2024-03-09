@@ -1,4 +1,5 @@
 * {
+    font-family: "Meiryo", sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -27,13 +28,39 @@ header {
     z-index: 10; /* ヘッダーが他の要素より上に表示されるように */
 }
 
-main {
-    flex: 1 0; /* main要素に可変の領域を割り当てる */
-    display: flex;
-    flex-direction: column;
+.title {
+    /* 表示設定 */
+    /* background-color: antiquewhite; */
+    height: 80px;
+    width: 300px;
 
     /* 位置設定 */
-    margin-top: 80px; /* ヘッダーの下に内容を表示する */
+    align-items: center;
+    display:flex;
+    justify-content: center;
+    position: fixed;
+    left: 50px;
+    top: 0;
+}
+
+h1 {
+    /* 表示設定 */
+    /* background-color: rgb(236, 118, 7); */
+    color: white;
+    font-size: 22px;
+
+    /* 位置設定 */
+    margin: 0;
+    position: fixed;
+    left: 70px;
+}
+
+main {
+    /* 位置設定 */
+    display: flex;
+    flex: 1 0; /* main要素に可変の領域を割り当てる */
+    flex-direction: column;
+    margin-top: 80px; 
 }
 
 #side-menu {
@@ -79,8 +106,7 @@ main {
 
 footer {
     /* 表示設定 */
-    background-color: black;
-    height: 10px;
+    background-color: rgb(0, 0, 0);
     width: 100%;
 
     /* 位置設定 */

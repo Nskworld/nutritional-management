@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}食品一覧{% endblock %}
+{% block statics %}
+    <link rel="stylesheet" href="{% static 'css/food/food_list.css' %}">
+{% endblock %}
+
+{% block content %}
+<div id="food-list-container">
+    <div class="search-container"></div>
+    <div class="container mt-5">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">食品名</th>
+                    <th scope="col">カロリー</th>
+                    <th scope="col">たんぱく質</th>
+                    <th scope="col">脂質</th>
+                    <th scope="col">炭水化物</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for food in food_list %}
+                    <tr class="list-item" data-id="{{ food.id }}">
+                        <td>{{ food.name |truncatechars:25 }}</td>
+                        <td>{{ food.calorie }}kcal</td>
+                        <td>{{ food.protein }}g</td>
+                        <td>{{ food.fat }}g</td>
+                        <td>{{ food.carbohydrate }}g</td>
+                        <td><i class="fa-solid fa-angle-right"></i></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        </div>
+
+    <div class="pagination">
+        {% if page_obj.has_previous %}
+        <a href="?page={{ page_obj.previous_page_number }}">
+            <div class="p-buttons"><i class="fa-solid fa-angle fa-angle-left"></i></div>
+        </a>
+        {% endif %}
+  
+        {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}">
+            <div class="p-buttons"><i class="fa-solid fa-angle fa-angle-right"></i></div>
+        </a>
+        {% endif %}
+    </div>
+</div>
+
+<!-- BootstrapのJSの読み込み -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+{% endblock %}
